@@ -17,7 +17,15 @@ class RailroadFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'company' => fake()->company(),
+            'station_start' => fake()->city(),
+            'station_arrive' => fake()->city(),
+            'hour_start' => fake()->time(),
+            'hour_arrive' => fake()->time(),
+            'train_code' => fake()->numerify('code-####'),
+            'carriage_number' => fake()->numberBetween(1, 20),
+            'in_time' => fake()->boolean(),
+            'cancelled' => fake()->boolean()
         ];
     }
 }
