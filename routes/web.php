@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Dico al file web.php dove trovare ModelMovie cotroller
+use App\Http\Controllers\Guest\PageController as PageController;
+
+// Lo indichiamo nella rotta
+Route::get('/', [PageController::class, 'index'])->name('homepage');

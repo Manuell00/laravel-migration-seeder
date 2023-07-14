@@ -17,14 +17,14 @@ return new class extends Migration
         Schema::create('railroads', function (Blueprint $table) {
             $table->id();
 
-            $table->string('company');
-            $table->string('station_start');
-            $table->string('station_arrive');
-            $table->time('hour_start');
-            $table->time('hour_arrive');
+            $table->string('company', 64);
+            $table->string('station_start', 64);
+            $table->string('station_arrive', 64);
+            $table->dateTime('hour_start');
+            $table->dateTime('hour_arrive');
             $table->string('train_code', 10)->unique();
             $table->integer('carriage_number');
-            $table->boolean('in_time')->nullable();
+            $table->boolean('in_time')->default(true);
             $table->boolean('cancelled')->default(false);
 
 
