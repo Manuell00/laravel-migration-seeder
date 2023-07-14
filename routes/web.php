@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController as PageController;
 
 // Lo indichiamo nella rotta
-Route::get('/', [PageController::class, 'index'])->name('homepage');
+Route::get('/', [PageController::class, 'index']);
